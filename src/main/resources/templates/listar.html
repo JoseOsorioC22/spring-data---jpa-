@@ -51,6 +51,7 @@
       <th>Apellido</th>
       <th>fecha nacimiento</th>
       <th>fecha Creacion</th>
+      <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
@@ -60,6 +61,10 @@
       <td th:text="${cliente.apellido}"></td>
       <td th:text="${#temporals.format(cliente.fechaNacimiento, 'dd/MM/yyyy')}"></td>
       <td th:text="${cliente.createAt}"></td>
+      <td>
+        <a class="btn btn-warning btn-xs" th:href="@{/form/} + ${cliente.id}" th:text="editar" ></a>
+        <a class="btn btn-danger btn-xs" th:href="@{/eliminar/} + ${cliente.id}" th:text="eliminar" ></a>
+      </td>
     </tr>
     </tbody>
   </table>
